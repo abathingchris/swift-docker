@@ -1,6 +1,6 @@
 FROM ubuntu:15.10
 
-ENV SWIFT_VERSION DEVELOPMENT-SNAPSHOT-2016-02-25-a
+ENV SWIFT_VERSION DEVELOPMENT-SNAPSHOT-2016-03-01-a
 ENV SWIFT_PLATFORM ubuntu15.10
 
 # Install Dependencies
@@ -27,8 +27,6 @@ RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
     gpg --verify $SWIFT_ARCHIVE_NAME.tar.gz.sig && \
     tar -xvzf $SWIFT_ARCHIVE_NAME.tar.gz -C / --strip 1 && \
     rm -rf $SWIFT_ARCHIVE_NAME* /tmp/* /var/tmp/*
-
-Expose 8080
 
 RUN mkdir -p /opt/swift
 ADD ./Package.swift /opt/swift/

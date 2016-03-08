@@ -29,8 +29,6 @@ RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
     rm -rf $SWIFT_ARCHIVE_NAME* /tmp/* /var/tmp/*
 
 RUN mkdir -p /opt/swift
-ADD ./Package.swift /opt/swift/
-ADD ./Sources /opt/swift/Sources
 
 # Set Swift Path
 ENV PATH /usr/bin:$PATH
